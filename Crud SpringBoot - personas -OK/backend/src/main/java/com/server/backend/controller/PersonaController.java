@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = {"http://150.136.217.38:4200"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:4200"}, maxAge = 3600)
 @RequestMapping("/api")
 public class PersonaController {
     
