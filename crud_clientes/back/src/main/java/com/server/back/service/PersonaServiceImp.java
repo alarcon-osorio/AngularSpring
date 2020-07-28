@@ -24,12 +24,12 @@ public class PersonaServiceImp implements PersonaService{
     }
 
     @Override
-    public Persona add(Persona p) {
-        return null;
+    public Persona save(Persona persona) {
+        return personaRepository.save(persona);
     }
 
     @Override
-    public Persona edit(Persona p) {
+    public Persona edit(Persona persona) {
         return null;
     }
 

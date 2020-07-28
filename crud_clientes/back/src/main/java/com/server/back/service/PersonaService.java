@@ -8,8 +8,8 @@ public interface PersonaService {
 
     List<Persona> listar();
     Persona listarId(int id);
-    Persona add(Persona p);
-    Persona edit(Persona p);
+    Persona save(Persona persona);
+    Persona edit(Persona persona);
     Persona delete(int id);
 
 }
