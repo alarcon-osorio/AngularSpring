@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Clientes</title>
+</head>
+<body>
+  <div style="text-align:center">
+    <h1>
+      Listado de {{title}}
+    </h1>  
+  </div>
+  <div class="container" style="text-align:center">
+    <button (click)="Listar()" class="btn btn-info">Listar</button>
+    <button (click)="Nuevo()"  class="btn btn-info" style="margin-left:10px;">Nuevo</button>
+  </div>  
+</body>
+</html>
+<hr>
+<router-outlet></router-outlet>
