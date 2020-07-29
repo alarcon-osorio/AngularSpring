@@ -20,7 +20,7 @@ public class PersonaServiceImp implements PersonaService{
 
     @Override
     public Persona listarId(int id) {
-        return null;
+        return personaRepository.findById(id);
     }
 
     @Override
@@ -30,11 +30,15 @@ public class PersonaServiceImp implements PersonaService{
 
     @Override
     public Persona edit(Persona persona) {
-        return null;
+        return personaRepository.save(persona);
     }
 
     @Override
     public Persona delete(int id) {
-        return null;
+        Persona persona = personaRepository.findById(id);
+        if (persona != null){
+            personaRepository.delete(persona);
+        }
+        return persona;
     }
 }
