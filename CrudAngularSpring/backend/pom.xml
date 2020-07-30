@@ -17,7 +17,7 @@
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
-    <!--Version 1.8 Java -->
+    <!--Version 1.8 Java-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
