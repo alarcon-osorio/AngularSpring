@@ -15,7 +15,8 @@ public class PeliculaDAOImpl implements PeliculaDAO{
 
     @Override
     public long save(Pelicula pelicula) {
-        return 0;
+        sessionFactory.getCurrentSession().save(pelicula);
+        return pelicula.getId();
     }
 
     @Override

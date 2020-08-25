@@ -4,8 +4,7 @@ import com.api.model.Pelicula;
 import com.api.service.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +19,13 @@ public class PeliculaController {
     public ResponseEntity<List<Pelicula>> getPeliculas(){
         List<Pelicula> list = peliculaService.list();
         return ResponseEntity.ok().body(list);
+    }
+
+    //Metodo guardar
+    @PostMapping("/api/pelicula")
+    public ResponseEntity<?> save(@RequestBody Pelicula pelicula) {
+        long id = peliculaService.save(pelicula);
+        return ResponseEntity.ok().body("la pelicula con id: "+ id + " ha sido guardada correctamente");
     }
 
 }

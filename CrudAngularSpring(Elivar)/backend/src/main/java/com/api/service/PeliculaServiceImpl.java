@@ -5,18 +5,20 @@ import com.api.model.Pelicula;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional(readOnly=true)
 public class PeliculaServiceImpl implements PeliculaService{
 
     @Autowired
     private PeliculaDAO peliculaDAO;
 
     @Override
+    @Transactional //Hace que haya transaccion en base de datos
     public long save(Pelicula pelicula) {
-        return 0;
+        return peliculaDAO.save(pelicula);
     }
 
     @Override
