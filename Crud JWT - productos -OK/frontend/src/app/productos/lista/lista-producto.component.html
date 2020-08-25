@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">precio</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{producto.id}}</td>
+          <td>{{producto.nombreProducto}}</td>
+          <td>{{producto.precio}}</td>
+          <td>
+            <button class="btn btn-primary" routerLink="/detalle/{{producto.id}}">Ver</button>
+            <button *ngIf="user === 'admin'" class="btn btn-warning" style="margin-left: 10px;" routerLink="/editar/{{producto.id}}">Editar</button>
+            <button *ngIf="user === 'admin'" class="btn btn-danger" style="margin-left: 10px;" (click)="onDelete(producto.id)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+        <button class="btn btn-success" routerLink="/nuevo">Nuevo Producto</button>
+    </div>
+  </div>
