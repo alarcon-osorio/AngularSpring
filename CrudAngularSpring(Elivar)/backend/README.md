@@ -1,3 +1,3 @@
 ## Backend JAVA MAVEN Spring Framework
 
-## Tiene Issue pendiente por cerrar
+## Tiene Issues pendiente por cerrar
