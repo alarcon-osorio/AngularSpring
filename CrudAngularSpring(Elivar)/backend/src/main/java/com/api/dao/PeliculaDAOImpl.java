@@ -21,7 +21,7 @@ public class PeliculaDAOImpl implements PeliculaDAO{
 
     @Override
     public Pelicula get(long id) {
-        return null;
+        return sessionFactory.getCurrentSession().get(Pelicula.class, id);
     }
 
     @Override

@@ -28,4 +28,11 @@ public class PeliculaController {
         return ResponseEntity.ok().body("la pelicula con id: "+ id + " ha sido guardada correctamente");
     }
 
+    //Metodo obtener por ID
+    @GetMapping("/api/peliculas/{id}")
+    public ResponseEntity<Pelicula> get(@PathVariable("id") long id){
+        Pelicula pelicula = peliculaService.get(id);
+        return ResponseEntity.ok().body(pelicula);
+    }
+
 }

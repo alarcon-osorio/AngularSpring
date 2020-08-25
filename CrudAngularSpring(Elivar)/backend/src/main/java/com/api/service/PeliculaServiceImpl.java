@@ -22,8 +22,9 @@ public class PeliculaServiceImpl implements PeliculaService{
     }
 
     @Override
+    @Transactional
     public Pelicula get(long id) {
-        return null;
+        return peliculaDAO.get(id);
     }
 
     @Override
