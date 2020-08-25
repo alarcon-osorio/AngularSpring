@@ -15,6 +15,7 @@ public class PeliculaController {
     @Autowired
     private PeliculaService peliculaService;
 
+    //Metodo para obtener
     @GetMapping("/api/peliculas")
     public ResponseEntity<List<Pelicula>> getPeliculas(){
         List<Pelicula> list = peliculaService.list();
