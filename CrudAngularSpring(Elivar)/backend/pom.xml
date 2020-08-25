@@ -66,7 +66,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.9-rc</version>
+            <version>8.0.17</version>
+            <!--Se modifica version de Mysql-->
         </dependency>
         <!-- Jackson API for JSON (Library JAVA to JSON) -->
         <dependency>
