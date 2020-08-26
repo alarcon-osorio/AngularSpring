@@ -40,7 +40,8 @@ public class PeliculaServiceImpl implements PeliculaService{
     }
 
     @Override
+    @Transactional
     public void delete(long id) {
-
+        peliculaDAO.delete(id);
     }
 }

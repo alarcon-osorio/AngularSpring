@@ -44,6 +44,7 @@ public class PeliculaDAOImpl implements PeliculaDAO{
 
     @Override
     public void delete(long id) {
-
+        Pelicula pelicula = sessionFactory.getCurrentSession().byId(Pelicula.class).load(id);
+        sessionFactory.getCurrentSession().delete(pelicula);
     }
 }

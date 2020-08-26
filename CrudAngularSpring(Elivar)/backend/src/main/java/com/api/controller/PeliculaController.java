@@ -42,4 +42,11 @@ public class PeliculaController {
         return ResponseEntity.ok().body("Pelicula ha sido actualizada correctamente");
     }
 
+    //Metodo Eliminar
+    @DeleteMapping("/api/pelicula/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") long id) {
+        peliculaService.delete(id);
+        return ResponseEntity.ok().body("Se elimino correctamente");
+    }
+
 }
