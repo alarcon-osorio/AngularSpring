@@ -34,8 +34,9 @@ public class PeliculaServiceImpl implements PeliculaService{
     }
 
     @Override
+    @Transactional
     public void update(long id, Pelicula pelicula) {
-
+        peliculaDAO.update(id, pelicula);
     }
 
     @Override

@@ -29,10 +29,17 @@ public class PeliculaController {
     }
 
     //Metodo obtener por ID
-    @GetMapping("/api/peliculas/{id}")
+    @GetMapping("/api/pelicula/{id}")
     public ResponseEntity<Pelicula> get(@PathVariable("id") long id){
         Pelicula pelicula = peliculaService.get(id);
         return ResponseEntity.ok().body(pelicula);
+    }
+
+    //Metodo Actualizar
+    @PutMapping("/api/pelicula/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") long id, @RequestBody Pelicula pelicula) {
+        peliculaService.update(id, pelicula);
+        return ResponseEntity.ok().body("Pelicula ha sido actualizada correctamente");
     }
 
 }

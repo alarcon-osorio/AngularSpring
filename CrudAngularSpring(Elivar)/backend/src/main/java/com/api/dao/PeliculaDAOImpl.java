@@ -1,7 +1,9 @@
 package com.api.dao;
 
 import com.api.model.Pelicula;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementAnyGraph;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -32,7 +34,12 @@ public class PeliculaDAOImpl implements PeliculaDAO{
 
     @Override
     public void update(long id, Pelicula pelicula) {
-
+        Session session = sessionFactory.getCurrentSession();
+        Pelicula oldPelicula = session.byId(Pelicula.class).load(id);
+        oldPelicula.setTitulo(pelicula.getTitulo());
+        oldPelicula.setSinopsis(pelicula.getSinopsis());
+        oldPelicula.setGenero(pelicula.getGenero());
+        session.flush();
     }
 
     @Override
